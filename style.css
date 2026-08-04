@@ -65,8 +65,10 @@ button:focus-visible {
 main {
   flex: 1;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
+  gap: clamp(3rem, 8vw, 5rem);
   padding: 2rem clamp(1.25rem, 5vw, 3rem) 4rem;
 }
 
@@ -179,6 +181,85 @@ main {
   font-family: var(--font-mono);
   font-size: 0.9rem;
 }
+
+.contact {
+  width: 100%;
+  max-width: 640px;
+}
+
+.contact-eyebrow {
+  color: var(--muted);
+  margin-bottom: 1rem;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  background: var(--bg-soft);
+  border: 1px solid var(--rule);
+  border-radius: 14px;
+  padding: clamp(1.5rem, 4vw, 2.25rem);
+}
+
+.contact-form label {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--muted);
+  margin-top: 0.85rem;
+}
+
+.contact-form label:first-child {
+  margin-top: 0;
+}
+
+.contact-form input,
+.contact-form textarea {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  color: var(--surface);
+  background: var(--bg);
+  border: 1px solid var(--rule);
+  border-radius: 8px;
+  padding: 0.65rem 0.8rem;
+  resize: vertical;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: 2px solid var(--amber);
+  outline-offset: 1px;
+}
+
+.submit-btn {
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+  color: var(--bg);
+  background: var(--teal);
+  border: none;
+  border-radius: 8px;
+  padding: 0.75rem 1.25rem;
+  margin-top: 1.5rem;
+  cursor: pointer;
+  align-self: flex-start;
+}
+
+.submit-btn:hover { opacity: 0.9; }
+
+.submit-btn:focus-visible {
+  outline: 2px solid var(--amber);
+  outline-offset: 3px;
+}
+
+.form-status {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  min-height: 1.2em;
+  margin: 0.75rem 0 0;
+}
+
+.form-status.success { color: var(--teal); }
+.form-status.error { color: var(--amber); }
 
 .site-footer {
   text-align: center;

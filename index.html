@@ -14,7 +14,7 @@
 
 <header class="site-header">
   <span class="wordmark">JB</span>
-  <a class="header-link" href="mailto:jon@jonmarkbaldwin.com">Contact</a>
+  <a class="header-link" href="/contact">Contact</a>
 </header>
 
 <main>
@@ -40,10 +40,27 @@
       <div class="citation-body">
         <h1 class="name">Jon Baldwin</h1>
         <p class="title">SEO &amp; AEO Strategist</p>
-        <a class="cta" href="mailto:jon@jonmarkbaldwin.com">Get in touch →</a>
+        <a class="cta" href="#contact">Get in touch →</a>
       </div>
     </div>
 
+  </section>
+
+  <section class="contact" id="contact">
+    <p class="answer-eyebrow contact-eyebrow">Get in touch</p>
+    <form id="contact-form" class="contact-form" novalidate>
+      <label for="name">Name</label>
+      <input type="text" id="name" name="name" autocomplete="name" required>
+
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" autocomplete="email" required>
+
+      <label for="message">Message</label>
+      <textarea id="message" name="message" rows="5" required></textarea>
+
+      <button type="submit" class="submit-btn">Send message</button>
+      <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+    </form>
   </section>
 </main>
 
@@ -52,6 +69,46 @@
 </footer>
 
 <script>
+  const WEB3FORMS_ACCESS_KEY = "f383b19a-0a0d-4f02-a6e2-63d69ca3b070";
+
+  const form = document.getElementById('contact-form');
+  const status = document.getElementById('form-status');
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    status.textContent = 'Sending…';
+    status.className = 'form-status';
+
+    const payload = {
+      access_key: WEB3FORMS_ACCESS_KEY,
+      subject: `New message from ${form.name.value}`,
+      name: form.name.value,
+      email: form.email.value,
+      message: form.message.value,
+    };
+
+    try {
+      const res = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload),
+      });
+      const data = await res.json();
+
+      if (data.success) {
+        status.textContent = 'Message sent — thank you.';
+        status.classList.add('success');
+        form.reset();
+      } else {
+        status.textContent = data.message || 'Something went wrong. Please try again.';
+        status.classList.add('error');
+      }
+    } catch {
+      status.textContent = 'Something went wrong. Please try again.';
+      status.classList.add('error');
+    }
+  });
+
   const el = document.getElementById('query-text');
   const full = el.textContent;
   const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
