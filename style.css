@@ -48,18 +48,29 @@ button:focus-visible {
 }
 
 .wordmark {
-  font-family: var(--font-mono);
-  font-size: 0.85rem;
-  letter-spacing: 0.15em;
-  color: var(--muted);
-  border: 1px solid var(--rule);
-  padding: 0.35rem 0.6rem;
-  border-radius: 4px;
+  display: block;
+  border-radius: 8px;
 }
 
-.header-link {
+.site-nav {
+  display: flex;
+  gap: clamp(1rem, 3vw, 1.75rem);
+  flex-wrap: wrap;
+}
+
+.site-nav a {
   font-family: var(--font-mono);
   font-size: 0.85rem;
+  color: var(--muted);
+}
+
+.site-nav a:hover {
+  color: var(--teal);
+  text-decoration: none;
+}
+
+.site-nav a[aria-current="page"] {
+  color: var(--teal);
 }
 
 main {
@@ -263,15 +274,92 @@ main {
 
 .site-footer {
   text-align: center;
-  padding: 1.5rem;
+  padding: 2rem 1.5rem;
   font-family: var(--font-mono);
   font-size: 0.75rem;
   color: #4A555C;
 }
 
+.footer-social {
+  display: flex;
+  justify-content: center;
+  gap: 1.25rem;
+  margin-bottom: 0.85rem;
+}
+
+.footer-social a {
+  color: var(--muted);
+  font-size: 0.8rem;
+}
+
+.footer-social a:hover {
+  color: var(--teal);
+  text-decoration: none;
+}
+
+.footer-copy {
+  margin: 0;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .cursor { animation: none; }
   .citation { transition: none; }
+}
+
+.page {
+  width: 100%;
+  max-width: 640px;
+}
+
+.page h1 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: clamp(2rem, 5vw, 2.75rem);
+  color: var(--surface);
+  margin: 0 0 1.25rem;
+}
+
+.page p {
+  line-height: 1.65;
+  margin: 0 0 1rem;
+}
+
+.page a { color: var(--teal); }
+
+.entry-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.entry-list li {
+  border-bottom: 1px solid var(--rule);
+  padding-bottom: 1.5rem;
+}
+
+.entry-list h2 {
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  margin: 0 0 0.35rem;
+}
+
+.entry-list h2 a { color: var(--surface); }
+.entry-list h2 a:hover { color: var(--teal); }
+
+.entry-date {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--muted);
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.entry-summary {
+  color: var(--muted);
+  margin: 0;
 }
 
 @media (max-width: 420px) {

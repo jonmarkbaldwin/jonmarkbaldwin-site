@@ -8,14 +8,18 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="/style.css">
+
+<link rel="icon" type="image/svg+xml" href="/mark.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="theme-color" content="#0F1417">
 </head>
 <body>
 
-<header class="site-header">
-  <span class="wordmark">JB</span>
-  <a class="header-link" href="/contact">Contact</a>
-</header>
+<div data-include="/partials/nav.html"></div>
 
 <main>
   <section class="hero">
@@ -64,10 +68,9 @@
   </section>
 </main>
 
-<footer class="site-footer">
-  <p>jonmarkbaldwin.com</p>
-</footer>
+<div data-include="/partials/footer.html"></div>
 
+<script src="/js/include.js"></script>
 <script>
   const WEB3FORMS_ACCESS_KEY = "f383b19a-0a0d-4f02-a6e2-63d69ca3b070";
 
