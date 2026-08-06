@@ -2,6 +2,21 @@
 // an element with a matching data-include attribute.
 // Usage: <div data-include="/partials/nav.html"></div>
 
+// Google Analytics (GA4) — loaded here so it runs on every page
+// without needing to paste the snippet into each HTML file.
+(function loadAnalytics() {
+  const script = document.createElement('script');
+  script.async = true;
+  script.src = 'https://www.googletagmanager.com/gtag/js?id=G-ENSCXN5514';
+  document.head.appendChild(script);
+
+  window.dataLayer = window.dataLayer || [];
+  function gtag() { dataLayer.push(arguments); }
+  window.gtag = gtag;
+  gtag('js', new Date());
+  gtag('config', 'G-ENSCXN5514');
+})();
+
 async function loadIncludes() {
   const targets = document.querySelectorAll('[data-include]');
 
