@@ -1,0 +1,12 @@
+# Temporary: send inner pages to the holding page.
+# 302 = temporary, so search engines won't treat it as permanent.
+# Delete this file (or the lines below) to bring the pages back.
+/about /  302
+/about/ /  302
+/about/* /  302
+/blog /  302
+/blog/ /  302
+/blog/* /  302
+/lab /  302
+/lab/ /  302
+/lab/* /  302
