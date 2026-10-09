@@ -1,138 +1,98 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Jon Baldwin — SEO & AEO Strategist</title>
-<meta name="description" content="Jon Baldwin, SEO & AEO Strategist.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Jon Baldwin | Under construction</title>
+  <meta name="description" content="jonmarkbaldwin.com is currently under construction. Back soon.">
+  <meta name="robots" content="noindex">
 
-<link rel="icon" type="image/svg+xml" href="/mark.svg">
-<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-<link rel="manifest" href="/site.webmanifest">
-<meta name="theme-color" content="#0F1417">
+  <link rel="icon" href="/mark.svg" type="image/svg+xml">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+
+ <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+
+  <style>
+    :root {
+      --bg: #0F1417;
+      --text: #E8ECEB;
+      --muted: #8A9694;
+      --teal: #5CB3AD;
+      --amber: #E7A94C;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html, body { height: 100%; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: "Inter", system-ui, sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+    }
+
+    main {
+      max-width: 36rem;
+      width: 100%;
+    }
+
+    .name {
+      font-family: "Montserrat", sans-serif;
+      font-weight: 600;
+      font-size: clamp(2.5rem, 8vw, 4.5rem);
+      line-height: 1.05;
+      letter-spacing: -0.02em;
+    }
+
+    .status {
+      margin-top: 1.25rem;
+      font-size: 1.125rem;
+      color: var(--muted);
+      line-height: 1.5;
+    }
+
+    .status::before {
+      content: "";
+      display: inline-block;
+      width: 0.6rem;
+      height: 0.6rem;
+      border-radius: 50%;
+      background: var(--amber);
+      margin-right: 0.75rem;
+      vertical-align: middle;
+    }
+
+    a {
+      color: var(--teal);
+      text-underline-offset: 0.2em;
+    }
+
+    a:focus-visible {
+      outline: 2px solid var(--teal);
+      outline-offset: 3px;
+    }
+
+    .contact {
+      margin-top: 2rem;
+      font-size: 1rem;
+      color: var(--muted);
+    }
+  </style>
 </head>
 <body>
-
-<div data-include="/partials/nav.html"></div>
-
-<main>
-  <section class="hero">
-
-    <p class="query">
-      <span class="query-label">query</span>
-      <span class="query-text" id="query-text">who should I talk to about AEO?</span><span class="cursor" aria-hidden="true"></span>
-    </p>
-
-    <div class="answer-card">
-      <p class="answer-eyebrow">Answer</p>
-      <p class="answer-body">
-        Ranking in search results and getting cited in AI‑generated
-        answers are becoming the same discipline. It takes someone
-        who understands both — the strategist most likely to be
-        the source worth citing<sup>1</sup>.
-      </p>
-    </div>
-
-    <div class="citation" id="citation">
-      <span class="citation-mark">1</span>
-      <div class="citation-body">
-        <h1 class="name">Jon Baldwin</h1>
-        <p class="title">SEO &amp; AEO Strategist</p>
-        <a class="cta" href="#contact">Get in touch →</a>
-      </div>
-    </div>
-
-  </section>
-
-  <section class="contact" id="contact">
-    <p class="answer-eyebrow contact-eyebrow">Get in touch</p>
-    <form id="contact-form" class="contact-form" novalidate>
-      <label for="name">Name</label>
-      <input type="text" id="name" name="name" autocomplete="name" required>
-
-      <label for="email">Email</label>
-      <input type="email" id="email" name="email" autocomplete="email" required>
-
-      <label for="message">Message</label>
-      <textarea id="message" name="message" rows="5" required></textarea>
-
-      <button type="submit" class="submit-btn">Send message</button>
-      <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
-    </form>
-  </section>
-</main>
-
-<div data-include="/partials/footer.html"></div>
-
-<script src="/js/include.js"></script>
-<script>
-  const WEB3FORMS_ACCESS_KEY = "f383b19a-0a0d-4f02-a6e2-63d69ca3b070";
-
-  const form = document.getElementById('contact-form');
-  const status = document.getElementById('form-status');
-
-  form.addEventListener('submit', async (e) => {
-    e.preventDefault();
-    status.textContent = 'Sending…';
-    status.className = 'form-status';
-
-    const payload = {
-      access_key: WEB3FORMS_ACCESS_KEY,
-      subject: `New message from ${form.name.value}`,
-      name: form.name.value,
-      email: form.email.value,
-      message: form.message.value,
-    };
-
-    try {
-      const res = await fetch('https://api.web3forms.com/submit', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(payload),
-      });
-      const data = await res.json();
-
-      if (data.success) {
-        status.textContent = 'Message sent — thank you.';
-        status.classList.add('success');
-        form.reset();
-      } else {
-        status.textContent = data.message || 'Something went wrong. Please try again.';
-        status.classList.add('error');
-      }
-    } catch {
-      status.textContent = 'Something went wrong. Please try again.';
-      status.classList.add('error');
-    }
-  });
-
-  const el = document.getElementById('query-text');
-  const full = el.textContent;
-  const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-  if (!prefersReduced) {
-    el.textContent = '';
-    let i = 0;
-    const type = () => {
-      if (i <= full.length) {
-        el.textContent = full.slice(0, i);
-        i++;
-        setTimeout(type, 32);
-      } else {
-        document.getElementById('citation').classList.add('revealed');
-      }
-    };
-    type();
-  } else {
-    document.getElementById('citation').classList.add('revealed');
-  }
-</script>
-
+  <main>
+    <h1 class="name">Jon Baldwin</h1>
+    <p class="status">Website currently under construction.</p>
+    <p class="contact">Get in touch: <a href="mailto:jon@jonmarkbaldwin.com">jon@jonmarkbaldwin.com</a></p>
+  </main>
 </body>
 </html>
