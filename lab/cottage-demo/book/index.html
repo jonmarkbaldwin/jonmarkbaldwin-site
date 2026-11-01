@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Prices & Booking — Orchard Cottage (demo)</title>
+<meta name="description" content="Demo: prices, availability calendar and booking enquiry form.">
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/lab/cottage-demo/cottage.css">
+</head>
+<body>
+
+<div class="demo-banner">
+  Demo site built by <a href="/">Jon Baldwin</a> — example content and photos, no real bookings.
+</div>
+
+<header class="c-header">
+  <div class="wrap">
+    <a class="c-logo" href="/lab/cottage-demo/">Orchard <span>Cottage</span></a>
+    <nav class="c-nav" aria-label="Main">
+      <a href="/lab/cottage-demo/">Home</a>
+      <a href="/lab/cottage-demo/the-cottage/">The Cottage</a>
+      <a href="/lab/cottage-demo/local-area/">Local Area</a>
+      <a href="/lab/cottage-demo/book/">Prices &amp; Booking</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="page-head">
+    <div class="wrap">
+      <h1>Prices &amp; Booking</h1>
+      <p>Choose your dates on the calendar and send us a booking request. We'll reply within a day to confirm, with a secure link to pay your deposit.</p>
+    </div>
+  </section>
+
+  <section class="block">
+    <div class="wrap">
+      <h2>Prices</h2>
+      <table class="prices">
+        <thead><tr><th>Season</th><th>When</th><th>Per night</th></tr></thead>
+        <tbody>
+          <tr><td>Low</td><td>November to March</td><td>£95</td></tr>
+          <tr><td>Mid</td><td>April to June, September and October</td><td>£120</td></tr>
+          <tr><td>High</td><td>July, August, and 20 December to 2 January</td><td>£150</td></tr>
+        </tbody>
+      </table>
+      <p class="small" style="margin-top:.8rem">Minimum stay 3 nights. Dogs £20 per stay. Prices include linen, towels, heating and logs. A 25% deposit secures your booking, and the balance is due 6 weeks before arrival.</p>
+    </div>
+  </section>
+
+  <section class="block">
+    <div class="wrap">
+      <h2>Availability</h2>
+      <div class="cal-controls">
+        <button type="button" id="cal-prev" aria-label="Previous months">‹</button>
+        <span class="small">Tap your arrival date, then your departure date</span>
+        <button type="button" id="cal-next" aria-label="Next months">›</button>
+      </div>
+      <div id="calendar" class="cal-months"></div>
+      <div class="legend">
+        <span><i style="background:var(--sage-light)"></i>Available</span>
+        <span><i style="background:var(--booked)"></i>Booked</span>
+        <span><i style="background:var(--sage)"></i>Your dates</span>
+      </div>
+      <div id="selection" class="selection" aria-live="polite"></div>
+      <p class="small" style="margin-top:.8rem">This demo uses made-up booked dates. On the real site, the calendar would update automatically from Airbnb.</p>
+    </div>
+  </section>
+
+  <section class="block" id="enquire">
+    <div class="wrap two-col">
+      <div>
+        <h2>Send a booking request</h2>
+        <form id="enquiry-form" class="enquiry" novalidate>
+          <div class="row2">
+            <div>
+              <label for="name">Your name</label>
+              <input id="name" name="name" autocomplete="name" required>
+            </div>
+            <div>
+              <label for="email">Email</label>
+              <input id="email" name="email" type="email" autocomplete="email" required>
+            </div>
+          </div>
+          <div>
+            <label for="phone">Phone (optional)</label>
+            <input id="phone" name="phone" type="tel" autocomplete="tel">
+          </div>
+          <div class="row2">
+            <div>
+              <label for="arrive">Arrival</label>
+              <input id="arrive" name="arrive" type="date" required>
+            </div>
+            <div>
+              <label for="depart">Departure</label>
+              <input id="depart" name="depart" type="date" required>
+            </div>
+          </div>
+          <div class="row2">
+            <div>
+              <label for="guests">Guests</label>
+              <select id="guests" name="guests">
+                <option>1</option><option selected>2</option><option>3</option><option>4</option>
+              </select>
+            </div>
+            <div>
+              <label for="dog">Bringing a dog?</label>
+              <select id="dog" name="dog">
+                <option value="no">No</option>
+                <option value="yes">Yes (£20)</option>
+              </select>
+            </div>
+          </div>
+          <div>
+            <label for="message">Anything else? (optional)</label>
+            <textarea id="message" name="message" placeholder="Arrival time, special occasions, questions…"></textarea>
+          </div>
+          <p id="estimate" class="small" aria-live="polite"></p>
+          <p id="form-error" class="error" role="alert" hidden></p>
+          <div><button class="btn" type="submit">Send booking request</button></div>
+          <p class="hint">Sending a request doesn't commit you to anything. Your booking is confirmed once the deposit is paid.</p>
+        </form>
+        <div id="thanks" class="thanks" hidden tabindex="-1"></div>
+      </div>
+      <div class="card">
+        <h3>How booking works</h3>
+        <ol class="ticks">
+          <li>Send us your dates using the form.</li>
+          <li>We'll check them and reply within a day.</li>
+          <li>Pay a 25% deposit through the secure link we send you.</li>
+          <li>Pay the balance 6 weeks before you arrive.</li>
+        </ol>
+        <p>Rather talk to us? Call <strong>01234 567890</strong>.</p>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="c-footer">
+  <div class="wrap grid">
+    <div>
+      <h3>Orchard Cottage</h3>
+      <p>Owners' address would go here<br>Village, County, Postcode</p>
+    </div>
+    <div>
+      <h3>Get in touch</h3>
+      <p>Phone: 01234 567890<br>Email: <a href="mailto:hello@example.com">hello@example.com</a></p>
+    </div>
+    <div>
+      <h3>Also on</h3>
+      <p><a href="https://www.airbnb.co.uk/" rel="nofollow">Find us on Airbnb</a></p>
+    </div>
+  </div>
+</footer>
+
+<script src="/lab/cottage-demo/cottage.js"></script>
+</body>
+</html>

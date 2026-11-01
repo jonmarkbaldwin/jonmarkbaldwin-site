@@ -1,6 +1,12 @@
 # Temporary: send inner pages to the holding page.
 # 302 = temporary, so search engines won't treat it as permanent.
 # Delete this file (or the lines below) to bring the pages back.
+
+# Exception: keep the cottage demo reachable while the rest of Lab is hidden.
+# These must stay ABOVE the /lab rules, because the first matching line wins.
+/lab/cottage-demo /lab/cottage-demo/ 301
+/lab/cottage-demo/* /lab/cottage-demo/:splat 200
+
 /about /  302
 /about/ /  302
 /about/* /  302
