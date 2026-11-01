@@ -1,0 +1,28 @@
+{
+  "title": "The Lodge",
+  "intro": "A single-storey stone barn, converted in 2019, with oak beams, underfloor heating and a wood burner for cosy evenings.",
+  "facts": ["Sleeps 4", "1 double, 1 twin", "1 bathroom with walk-in shower", "Dog friendly (1 dog)", "Step-free access"],
+  "photos": [
+    { "image": "", "caption": "Outside the lodge" },
+    { "image": "", "caption": "Living room and wood burner" },
+    { "image": "", "caption": "Kitchen" },
+    { "image": "", "caption": "Double bedroom" },
+    { "image": "", "caption": "Bathroom" },
+    { "image": "", "caption": "Garden" }
+  ],
+  "sections": [
+    { "heading": "Inside", "text": "Living room: sofas, a wood burner (logs provided), a smart TV and a shelf of books and games.\n\nKitchen: oven, hob, dishwasher, fridge-freezer, microwave and a coffee machine. Dining table for four.\n\nBedrooms: one king-size double and one twin. Bed linen and towels are included.\n\nBathroom: walk-in shower, heated towel rail and toiletries." },
+    { "heading": "Outside", "text": "A private, fenced garden with a patio, table and chairs, and a barbecue. Parking for two cars beside the lodge." }
+  ],
+  "info_heading": "Good to know",
+  "info_list": [
+    "Check-in from 4pm, check-out by 10am",
+    "Minimum stay 3 nights",
+    "One well-behaved dog welcome (£20 per stay)",
+    "No smoking",
+    "Welcome hamper on arrival",
+    "Travel cot and high chair on request",
+    "We live on site and are happy to help"
+  ],
+  "button": { "label": "Check availability", "link": "/lab/rose-farm-lodge/book/" }
+}

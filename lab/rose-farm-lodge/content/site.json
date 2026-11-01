@@ -1,0 +1,17 @@
+{
+  "name": "Rose Farm Lodge",
+  "banner": "Demo site built by Jon Baldwin. The content and photos are examples, and no real bookings are taken.",
+  "nav": [
+    { "label": "Home", "link": "/lab/rose-farm-lodge/" },
+    { "label": "The Lodge", "link": "/lab/rose-farm-lodge/the-lodge/" },
+    { "label": "Local Area", "link": "/lab/rose-farm-lodge/local-area/" },
+    { "label": "Prices & Booking", "link": "/lab/rose-farm-lodge/book/" }
+  ],
+  "address": "Rose Farm\nVillage, County, Postcode",
+  "phone": "01234 567890",
+  "email": "hello@example.com",
+  "footer_links_heading": "Also on",
+  "footer_links": [
+    { "label": "Find us on Airbnb", "url": "https://www.airbnb.co.uk/" }
+  ]
+}

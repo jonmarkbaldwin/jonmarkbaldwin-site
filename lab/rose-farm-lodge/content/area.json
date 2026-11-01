@@ -1,0 +1,12 @@
+{
+  "title": "Local Area",
+  "intro": "Here are a few of our favourite places nearby. Ask us when you arrive and we'll point you to more.",
+  "places": [
+    { "image": "", "title": "Walks from the door", "text": "A 5-mile circular walk starts at our gate and passes through woodland and along the river. Maps are in the lodge.", "link": "" },
+    { "image": "", "title": "Food and drink", "text": "The village pub (10 minutes on foot) serves Sunday roasts and welcomes dogs. There's a farm shop 2 miles away.", "link": "" },
+    { "image": "", "title": "Days out", "text": "The market town is 15 minutes by car, with a weekly market, independent shops and a castle. The coast is 40 minutes away.", "link": "" }
+  ],
+  "getting_here_heading": "Getting here",
+  "getting_here_text": "We're 20 minutes from the nearest railway station, and we're happy to collect you by arrangement. We'll send full directions when you book, because sat navs sometimes send people up the farm track by mistake.",
+  "map_embed": ""
+}

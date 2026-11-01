@@ -1,0 +1,23 @@
+{
+  "title": "Prices & Booking",
+  "intro": "Choose your dates on the calendar and send us a booking request. We'll reply within a day to confirm, with a secure link to pay your deposit.",
+  "seasons": [
+    { "name": "Low", "when": "November to March", "price": 95, "months": ["January", "February", "March", "November", "December"] },
+    { "name": "Mid", "when": "April to June, September and October", "price": 120, "months": ["April", "May", "June", "September", "October"] },
+    { "name": "High", "when": "July and August", "price": 150, "months": ["July", "August"] }
+  ],
+  "min_nights": 3,
+  "max_guests": 4,
+  "dog_fee": 20,
+  "prices_note": "Minimum stay 3 nights. Dogs £20 per stay. Prices include linen, towels, heating and logs. A 25% deposit secures your booking, and the balance is due 6 weeks before arrival.",
+  "calendar_note": "This demo uses made-up booked dates. On the real site, the calendar would update automatically from Airbnb.",
+  "form_heading": "Send a booking request",
+  "steps_heading": "How booking works",
+  "steps": [
+    "Send us your dates using the form.",
+    "We'll check them and reply within a day.",
+    "Pay a 25% deposit through the secure link we send you.",
+    "Pay the balance 6 weeks before you arrive."
+  ],
+  "contact_note": "Rather talk to us? Give us a call."
+}
