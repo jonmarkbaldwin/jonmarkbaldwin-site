@@ -1,0 +1,297 @@
+# Pages CMS settings (https://pagescms.org).
+# This file tells Pages CMS which parts of the site can be edited and
+# what the editing boxes should be called. Edit it through GitHub, not
+# through Pages CMS.
+
+media:
+  input: lab/rose-farm-lodge/images
+  output: /lab/rose-farm-lodge/images
+  rename: safe
+  extensions: [jpg, jpeg, png, webp]
+
+content:
+  # ---------------------------------------------------------------
+  - name: lodge-site
+    label: "Rose Farm Lodge: Contact details & menu"
+    type: file
+    path: lab/rose-farm-lodge/content/site.json
+    format: json
+    fields:
+      - name: name
+        label: Lodge name
+        type: string
+        required: true
+      - name: banner
+        label: Banner at the top of every page
+        description: Leave empty to hide the banner.
+        type: string
+      - name: phone
+        label: Phone number
+        type: string
+      - name: email
+        label: Email address
+        type: string
+      - name: address
+        label: Address
+        description: Put each line of the address on its own line.
+        type: text
+      - name: nav
+        label: Menu links
+        description: Change the wording freely. Only change a link if you know the page address.
+        type: object
+        list: true
+        fields:
+          - name: label
+            label: Wording
+            type: string
+          - name: link
+            label: Link
+            type: string
+      - name: footer_links_heading
+        label: Heading for the links at the bottom of the page
+        type: string
+      - name: footer_links
+        label: Links at the bottom of the page
+        description: For example your Airbnb listing or Instagram page. Paste the full web address.
+        type: object
+        list: true
+        fields:
+          - name: label
+            label: Wording
+            type: string
+          - name: url
+            label: Web address
+            type: string
+
+  # ---------------------------------------------------------------
+  - name: lodge-home
+    label: "Rose Farm Lodge: Home page"
+    type: file
+    path: lab/rose-farm-lodge/content/home.json
+    format: json
+    fields:
+      - name: page_title
+        label: Browser tab title
+        description: Shown in the browser tab and on Google.
+        type: string
+      - name: hero_image
+        label: Big photo at the top
+        description: A wide landscape photo works best.
+        type: image
+      - name: hero_title
+        label: Main heading
+        type: string
+      - name: hero_text
+        label: Text under the heading
+        type: text
+      - name: buttons
+        label: Buttons
+        type: object
+        list: true
+        fields:
+          - name: label
+            label: Wording
+            type: string
+          - name: link
+            label: Link
+            type: string
+          - name: style
+            label: Style
+            type: select
+            options:
+              values: [Main, Outline]
+      - name: facts
+        label: Quick facts
+        description: Short tags such as "Sleeps 4" or "Dog friendly".
+        type: string
+        list: true
+      - name: highlights
+        label: Highlight boxes
+        type: object
+        list: true
+        fields:
+          - name: title
+            label: Heading
+            type: string
+          - name: text
+            label: Text
+            type: text
+      - name: reviews_heading
+        label: Reviews heading
+        type: string
+      - name: reviews
+        label: Guest reviews
+        type: object
+        list: true
+        fields:
+          - name: quote
+            label: What they said
+            type: text
+          - name: by
+            label: Who said it
+            description: For example "Sarah, stayed in May 2026".
+            type: string
+
+  # ---------------------------------------------------------------
+  - name: lodge-lodge
+    label: "Rose Farm Lodge: The Lodge page"
+    type: file
+    path: lab/rose-farm-lodge/content/lodge.json
+    format: json
+    fields:
+      - name: title
+        label: Page heading
+        type: string
+      - name: intro
+        label: Introduction
+        type: text
+      - name: facts
+        label: Quick facts
+        type: string
+        list: true
+      - name: photos
+        label: Photo gallery
+        description: Drag to reorder. Each photo can have a short caption.
+        type: object
+        list: true
+        fields:
+          - name: image
+            label: Photo
+            type: image
+          - name: caption
+            label: Caption
+            type: string
+      - name: sections
+        label: Text sections
+        description: Leave a blank line between paragraphs. Starting a paragraph with "Kitchen:" makes that word bold.
+        type: object
+        list: true
+        fields:
+          - name: heading
+            label: Heading
+            type: string
+          - name: text
+            label: Text
+            type: text
+      - name: info_heading
+        label: Side box heading
+        type: string
+      - name: info_list
+        label: Side box points
+        type: string
+        list: true
+      - name: button
+        label: Side box button
+        type: object
+        fields:
+          - name: label
+            label: Wording
+            type: string
+          - name: link
+            label: Link
+            type: string
+
+  # ---------------------------------------------------------------
+  - name: lodge-area
+    label: "Rose Farm Lodge: Local Area page"
+    type: file
+    path: lab/rose-farm-lodge/content/area.json
+    format: json
+    fields:
+      - name: title
+        label: Page heading
+        type: string
+      - name: intro
+        label: Introduction
+        type: text
+      - name: places
+        label: Places to visit
+        type: object
+        list: true
+        fields:
+          - name: image
+            label: Photo
+            type: image
+          - name: title
+            label: Name
+            type: string
+          - name: text
+            label: Description
+            type: text
+          - name: link
+            label: Website (optional)
+            description: Adds a "Find out more" link.
+            type: string
+      - name: getting_here_heading
+        label: Directions heading
+        type: string
+      - name: getting_here_text
+        label: Directions text
+        type: text
+      - name: map_embed
+        label: Google Map link
+        description: In Google Maps, choose Share, then "Embed a map", and copy only the web address inside src="…". It starts with https://www.google.com/maps/embed
+        type: string
+
+  # ---------------------------------------------------------------
+  - name: lodge-booking
+    label: "Rose Farm Lodge: Prices & Booking page"
+    type: file
+    path: lab/rose-farm-lodge/content/booking.json
+    format: json
+    fields:
+      - name: title
+        label: Page heading
+        type: string
+      - name: intro
+        label: Introduction
+        type: text
+      - name: seasons
+        label: Prices by season
+        description: Tick the months each price applies to. The calendar uses these to estimate the price.
+        type: object
+        list: true
+        fields:
+          - name: name
+            label: Season name
+            type: string
+          - name: when
+            label: When (wording shown to guests)
+            type: string
+          - name: price
+            label: Price per night (£)
+            type: number
+          - name: months
+            label: Months
+            type: select
+            options:
+              multiple: true
+              values: [January, February, March, April, May, June, July, August, September, October, November, December]
+      - name: min_nights
+        label: Minimum stay (nights)
+        type: number
+      - name: max_guests
+        label: Maximum guests
+        type: number
+      - name: dog_fee
+        label: Dog fee per stay (£)
+        type: number
+      - name: prices_note
+        label: Small print under the prices
+        type: text
+      - name: calendar_note
+        label: Note under the calendar
+        type: text
+      - name: form_heading
+        label: Booking form heading
+        type: string
+      - name: steps_heading
+        label: "\"How booking works\" heading"
+        type: string
+      - name: steps
+        label: How booking works (steps)
+        type: string
+        list: true
+      - name: contact_note
+        label: Line before the phone number
+        type: string

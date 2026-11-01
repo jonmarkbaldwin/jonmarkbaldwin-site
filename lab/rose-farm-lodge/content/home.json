@@ -1,0 +1,21 @@
+{
+  "page_title": "Rose Farm Lodge: a quiet countryside stay",
+  "hero_title": "A quiet countryside lodge, just for you",
+  "hero_text": "A converted stone barn on our family smallholding. It sleeps 4, dogs are welcome, and the kettle's on when you arrive.",
+  "hero_image": "",
+  "buttons": [
+    { "label": "Check availability", "link": "/lab/rose-farm-lodge/book/", "style": "Main" },
+    { "label": "See the lodge", "link": "/lab/rose-farm-lodge/the-lodge/", "style": "Outline" }
+  ],
+  "facts": ["Sleeps 4", "2 bedrooms", "Dog friendly", "Wood burner", "Private garden", "Free parking", "Wi-Fi"],
+  "highlights": [
+    { "title": "Book direct with us", "text": "Booking with us directly means no booking fees. You'll deal with us, the owners, from the first message to the day you leave." },
+    { "title": "Peace and quiet", "text": "Wake up to birdsong and views across the farm. There's no through traffic, just the odd tractor." },
+    { "title": "Plenty nearby", "text": "Footpaths start from the gate. The village pub is a 10-minute walk, and the market town is 15 minutes by car." }
+  ],
+  "reviews_heading": "What guests say",
+  "reviews": [
+    { "quote": "Spotless, cosy and so peaceful. The welcome hamper was a lovely touch.", "by": "Example review. Replace with a real guest review." },
+    { "quote": "Our dog loved the garden as much as we loved the wood burner. We'll be back.", "by": "Example review. Replace with a real guest review." }
+  ]
+}
